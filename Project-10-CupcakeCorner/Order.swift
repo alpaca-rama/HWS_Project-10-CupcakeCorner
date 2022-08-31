@@ -1,5 +1,5 @@
 //
-//  Oder.swift
+//  Order.swift
 //  Project-10-CupcakeCorner
 //
 //  Created by Luca Capriati on 2022/08/31.
@@ -26,4 +26,17 @@ class Order: ObservableObject {
     
     @Published var addExtraFrosting = false
     @Published var addExtraSprinkles = false
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    @Published var zip = ""
+    
+    var hasValidAddress: Bool {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+            return false
+        }
+        
+        return true
+    }
 }
